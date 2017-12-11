@@ -1,0 +1,39 @@
+function swap(arr, i, j) {
+  var temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+  console.log("Test : "+arr[i]+"Test1 :"+arr[j]);
+  console.log("Check");
+}
+
+function dutchNatFlag(arr) {
+  
+  var low = 0;
+  var mid = 0;
+  var high = arr.length - 1;
+  console.log("mid :"+mid+"low :"+low+"high :"+high+"Test :"+arr);
+  
+  while (mid <= high) {
+    if(arr[mid] === 0) 
+    { 
+    console.log("Mid(0) :"+arr[mid]+"arr:"+arr);
+    swap(arr, low++, mid++); 
+    }
+    else if (arr[mid] === 2)
+    { 
+    console.log("Mid(2) :"+arr[mid]+"arr:"+arr);
+    swap(arr, mid, high--); 
+    }
+    else if (arr[mid] === 1) 
+    {
+    console.log("Mid(1) :"+mid+"arr:"+arr);
+    mid++;
+    }
+  }
+  
+  return arr;
+  
+}
+
+var arr1=dutchNatFlag([2,2,2,0,0,0,1,1,1,1,1]); 
+console.log(arr1);
