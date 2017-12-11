@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define max -1;
+void print1st2nd3rdnumber(int arr[],int c){
+    
+    int first,second,third,i=0;
+     if(c<3){
+         printf("It's not possible to find out the three largest numbers");
+     }
+     else{
+         first=second=third=max;
+         for(i=0;i<c;i++){
+             if(arr[i]>first){
+                 third=second;
+                 second=first;
+                 first=arr[i];
+                 
+             }
+             else if(arr[i]>second){
+                 third=second;
+                 second=arr[i];
+             }
+             else if(arr[i]> third){
+                 third=arr[i];
+             }
+             
+         }
+         printf("First Large : %d ,Second Large : %d ,Third Large : %d",first,second,third);
+     }
+    
+
+}
+int main() {
+	//code
+	int arr[]={2,13,10,2,15,27,8,50,123,1};
+	int s;
+	s=sizeof(arr)/sizeof(arr[0]);
+	print1st2nd3rdnumber(arr,s);
+	return 0;
+}

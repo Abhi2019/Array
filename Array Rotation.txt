@@ -1,0 +1,29 @@
+#include <stdio.h>
+ 
+int main() {
+   
+     int a[]={1,2,3,4,5,6};
+     int temp[]={1,2,3};
+     int i=0,j=0,n,m,p;
+     m=6;
+     n=6-3;
+     p=3;
+    for(i=0;i<6;i++){
+        
+        if(i<n){
+            
+            a[i]=a[i+p];
+            printf("%d check \n",a[i]);
+        }
+        if(i>=n){
+            
+            a[i]=temp[j];
+            j++;
+        }
+    }
+    for(i=0;i<6;i++){
+        
+        printf("%d",a[i]);
+    }
+	return 0;
+}
